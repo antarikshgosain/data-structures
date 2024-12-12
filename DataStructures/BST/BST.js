@@ -10,6 +10,7 @@ class BST {
     constructor(){
         this.root = null;
     }
+
     insert(value){
         var node = new Node(value);
         if(!this.root) {
@@ -39,12 +40,13 @@ class BST {
             }
         }
     }
+
     find(value) {
         if(this.root === null) return false;
         var current = this.root;
         var found = false;
         while(!found && current){
-            if(current.value === value){
+            if (current.value === value) {
                 found = true;
             } else if (value < current.value ) {
                 current = current.left; 
@@ -54,6 +56,7 @@ class BST {
         }
         return current!==null ? current : false ;
     }
+
     bfs(){
         var data = [];
         var queue = [] ;
@@ -68,6 +71,7 @@ class BST {
         }
         return data;
     }
+
     dfsPreOrder(){
         var data = [];
         var current = this.root;
@@ -79,6 +83,7 @@ class BST {
         traverse(current);
         return data;
     }
+
     dfsPostOrder(){
         var data = [];
         var current = this.root;
@@ -90,6 +95,7 @@ class BST {
         traverse(current);
         return data;
     }
+
     dfsInOrder(){
         var data = [];
         var current = this.root;
